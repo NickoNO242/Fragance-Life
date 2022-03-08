@@ -22,7 +22,7 @@ const products = {
     getBestPromotion: function (number){
         return db.products.findAll({
             include: [{ association: "brand" }, { association: "smellFamily" }, {association:"images_products"}],
-            order: [["promotion" , "DESC"]], limit : 1
+            order: [["discount" , "DESC"]], limit : 1
             
         })
             .then((products) => products)
